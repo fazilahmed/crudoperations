@@ -62,7 +62,7 @@
 
 </div>
 <div class="middlecontent">
-<form:form class="signupform" modelAttribute="userModelAgent">
+<form:form class="signupform" modelAttribute="userModelAgent" action="signup">
 
 <label>userName</label>
 <form:input type="text" path="userName"></form:input>
@@ -83,15 +83,17 @@
 <form:input type="text" path="userAddress"></form:input>
 <br>
 <label>userAge</label>
-<form:input type="number" path="userAge"></form:input>
+<form:input type="text" path="userAge"></form:input>
 <br>
 <label>userContact</label>
-<form:input type="number" path="userContact"></form:input>
-
+<form:input type="text" path="userContact"></form:input>
+<br>
+<input type="submit" class="btn btn-submit">
 </form:form>
 </div>
 <div class="rightcontent">
 
+</div>
 </div>
 </body>
 </html>

@@ -1,18 +1,20 @@
 package com.niit.backend.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class product {
 			
-			@Id
-			private String productId;
+			@Id @GeneratedValue(strategy=GenerationType.SEQUENCE)
+			private int productId;
 			private String productQuantity,productPrice,product,productName,productDescription,productSuplier,productCategory;
-			public String getProductId() {
+			public int getProductId() {
 				return productId;
 			}
-			public void setProductId(String productId) {
+			public void setProductId(int productId) {
 				this.productId = productId;
 			}
 			public String getProductQuantity() {
@@ -57,5 +59,6 @@ public class product {
 			public void setProductCategory(String productCategory) {
 				this.productCategory = productCategory;
 			}
+			
 				
 }

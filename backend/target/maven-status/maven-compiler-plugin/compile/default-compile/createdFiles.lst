@@ -1,3 +1,12 @@
-com\niit\backend\model\userModel.class
 com\niit\backend\App.class
+com\niit\backend\model\supplier.class
+com\niit\backend\dao\UserDao.class
+com\niit\backend\model\Category.class
+com\niit\backend\daoImpl\CategorydaoImpl.class
 com\niit\backend\dataBaseConfig\dataBaseConfiguration.class
+com\niit\backend\model\cart.class
+com\niit\backend\model\product.class
+com\niit\backend\model\login.class
+com\niit\backend\dao\CategoryDao.class
+com\niit\backend\model\userModel.class
+com\niit\backend\daoImpl\UserDaoImpl.class

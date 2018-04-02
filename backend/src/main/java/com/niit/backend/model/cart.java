@@ -1,18 +1,20 @@
 package com.niit.backend.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class cart {
 		
-		@Id
-		private String cartId;
+		@Id @GeneratedValue(strategy=GenerationType.SEQUENCE)
+		private int cartId;
 		private String cartUsername,cartProductname,cartProductId,cartProductPrice,cartProductQuantity;
-		public String getCartId() {
+		public int getCartId() {
 			return cartId;
 		}
-		public void setCartId(String cartId) {
+		public void setCartId(int cartId) {
 			this.cartId = cartId;
 		}
 		public String getCartUsername() {
@@ -45,6 +47,8 @@ public class cart {
 		public void setCartProductQuantity(String cartProductQuantity) {
 			this.cartProductQuantity = cartProductQuantity;
 		}
+		
+		
 		
 		
 }

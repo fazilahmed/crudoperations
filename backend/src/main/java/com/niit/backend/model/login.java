@@ -1,5 +1,7 @@
 package com.niit.backend.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -8,7 +10,8 @@ public class login {
 		
 		@Id
 		private String loginID;
-		private String loginUsername,loginPassword,loginTime,logoutTime;
+		private String loginUsername,loginPassword;
+		Date loginTime,logoutTime;
 		public String getLoginID() {
 			return loginID;
 		}
@@ -27,17 +30,17 @@ public class login {
 		public void setLoginPassword(String loginPassword) {
 			this.loginPassword = loginPassword;
 		}
-		public String getLoginTime() {
+		public Date getLoginTime() {
 			return loginTime;
 		}
-		public void setLoginTime(String loginTime) {
-			this.loginTime = loginTime;
+		public void setLoginTime() {
+			this.loginTime = new Date();
 		}
-		public String getLogoutTime() {
+		public Date getLogoutTime() {
 			return logoutTime;
 		}
-		public void setLogoutTime(String logoutTime) {
-			this.logoutTime = logoutTime;
+		public void setLogoutTime() {
+			this.logoutTime = new Date();
 		}
 		
 }
