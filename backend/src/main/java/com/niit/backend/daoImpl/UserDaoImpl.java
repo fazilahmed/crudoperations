@@ -21,7 +21,7 @@ public class UserDaoImpl implements UserDao {
 		try {
 			Session session = sessionFactory.openSession();
 			Transaction transaction = session.beginTransaction();
-			session.save(obj);
+			session.saveOrUpdate(obj);
 			transaction.commit();
 			session.close();
 			return true;
@@ -47,6 +47,40 @@ public class UserDaoImpl implements UserDao {
 		} catch (Exception e) {
 			// TODO: handle exception
 			return allusers;
+		}
+	}
+
+	public userModel singleUser(String userName) {
+		// TODO Auto-generated method stub
+		userModel obj= null;
+		
+		
+		
+		try {
+			Session session=sessionFactory.openSession();
+			Transaction transaction= session.beginTransaction();
+			obj=(userModel)session.get(userModel.class, userName);
+			transaction.commit();
+			session.close();
+			return  obj;
+		} catch (Exception e) {
+			// TODO: handle exception
+			return obj;
+		}
+	}
+
+	public boolean deleteUser(userModel obj) {
+		// TODO Auto-generated method stub
+		try {
+			Session session=sessionFactory.openSession();
+			Transaction transaction= session.beginTransaction();
+			session.delete(obj);
+			transaction.commit();
+			session.close();
+			return  true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
 		}
 	}
 }

@@ -62,6 +62,7 @@ li a:hover:not(.active) {
   <li><a class="active" href="http://localhost:8080/frontend/">Home</a></li>
   <li><a href="http://localhost:8080/frontend/login">Enquiry</a></li>
   <li><a href="http://localhost:8080/frontend/reg">Reach Us</a></li>
+  <li><a href="http://localhost:8080/frontend/cat">Category register</a></li>
   <li style="float:right"><a href="http://localhost:8080/frontend/aboutus">About us</a></li>
 </ul>
 <h1>Hello World!</h1>

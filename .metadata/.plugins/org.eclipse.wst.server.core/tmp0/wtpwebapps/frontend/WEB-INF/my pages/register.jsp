@@ -123,8 +123,8 @@ table tbody tr td {
 							<td>${usr.getUserName()}</td>
 							<td>${usr.getUserEmail()}</td>
 							<td>${usr.getUserCity()}</td>
-							<td><button class="btn btn-submit">Delete</button></td>
-							<td><button class="btn btn-submit">Edit</button></td>
+							<td><a href="deleteuser/${usr.getUserName()}/"><button class="btn btn-submit">Delete</button></a></td>
+							<td><a href="singlereg?userid=${usr.getUserName()}"><button class="btn btn-submit">Edit</button></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

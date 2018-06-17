@@ -1,4 +1,5 @@
 <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -28,19 +29,15 @@
    background-color:yellow;
    }
    .leftcontent{
-   width:30vw;
+   width:100vw;
    height:80vw;
    background-color:lightgreen;
+   display:flex;
    }
    .rightcontent{
-   width:30vw;
+   width:100vw;
    height:80vw;
    background-color:lightblue;
-   }
-   .middlecontent{
-   width:40vw;
-   height:80vw;
-   background-color:white;
    }
    .form{
    display:flex;
@@ -48,6 +45,15 @@
    .signupform{
    padding-left:5vw;
    }
+   table tbody tr td {
+	border: 2px;
+	border-width: 2px;
+	border-color: black;
+	border-style: double;
+}
+tr td{
+padding-left: 20px;
+}
   </style>
 </head>
 <body>
@@ -57,25 +63,42 @@
 </div> <div class="linkpart">
 
 </div>
-</div>>
+</div>
 <div class="form">
 <div class="leftcontent">
 
-</div>
-<div class="middlecontent">
 <form:form class="signupform" modelAttribute="categoryModelAgent" action="addcat">
 
 <label>category Id</label>
 <form:input type="text" path="categoryId"></form:input>
 <br>
 <label>category Name</label>
-<form:input type="password" path="categoryName"></form:input>
+<form:input type="text" path="categoryName"></form:input>
 <br>
 <br>
 <input type="submit" class="btn btn-submit">
 </form:form>
 <div class="rightcontent">
 
+
+			<table>
+				<tbody>
+					<tr>
+						<td>Category ID</td>
+						<td>Category Name</td>
+						<td>Delete</td>
+						<td>Edit</td>
+					</tr>
+					<c:forEach var="cats" items="${allcategories}">
+						<tr>
+							<td>${cats.getCategoryId()}</td>
+							<td>${cats.getCategoryName()}</td>
+							<td><a href="deletecategory/${cats.getCategoryName()}/"><button class="btn btn-submit">Delete</button></a></td>
+							<td><a href="singleCategory?categoryid=${cats.getCategoryName()}"><button class="btn btn-submit">Edit</button></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
 </div>
 </body>
 </html>
